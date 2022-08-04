@@ -1,11 +1,7 @@
-
 const titleInput = document.getElementById("titleInput");
 const authorInput = document.getElementById("authorInput");
 const pageInput = document.getElementById("pageInput");
 const completedBox = document.getElementById("completedBox");
-
-// function to verify input (all forms + page is number)
-// check that book isn't already on the list
 
 function submit(){
     if(verifyInput()){
@@ -16,6 +12,14 @@ function submit(){
 
 // REFACTOR: Make this a ternary
 function verifyInput(){
+    // check that book isn't already on the list
+    myLibrary.forEach(book => {
+        if(book.title == titleInput.value){
+            alert("Already Exists");
+            return false;
+        }
+    })
+
     // verify thar pageInput is a number
     if(isNaN(pageInput.value)){
         alert("Please enter a valid number.")
