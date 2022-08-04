@@ -25,10 +25,17 @@ function submit(){
 
 // REFACTOR: Make this a ternary
 function verifyInput(){
+    // verify thar pageInput is a number
+    if(isNaN(pageInput.value)){
+        alert("Please enter a valid number.")
+        return false;
+    }
+
     // check that fields aren't empty
     if((titleInput.value != '') && (authorInput.value != '') && (pageInput.value != '')){
         return true;
     } else{
+        alert("Please Complete All Fields.")
         return false;
     }
 }
@@ -61,6 +68,8 @@ function addBookToLibrary(title, author, pageCount, completeness){
     <td>${nextBook.author}</td>
     <td>${nextBook.pageCount}</td>
     <td>${nextBook.completeness}</td>
+    <td><button class="read"></td>
+    <td><button class="remove">X</button></td>
     `;
     list.appendChild(row);
 }

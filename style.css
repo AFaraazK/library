@@ -79,6 +79,18 @@ thead th{
 thead tr{
     text-align: left;
 }
-tbody tr{
-    border-bottom: 10px solid #dddddd;
+.remove{
+    color:white;
+    font-weight: bold;
+    background-color: red;
+    border-color: firebrick;
+    height:auto;
+    width:15px;
+}
+.read{
+    background-color: lightgreen;
+    border-color: green;
+    border-radius: 50%;
+    height:15px;
+    width:15px;
 }
