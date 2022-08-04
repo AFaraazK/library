@@ -6,6 +6,33 @@
 // titleCell.innerHTML = "EXAMPLE TITLE";
 // authorCell.innerHTML = "EXAMPLE Author";
 
+// TODO: Add delete option
+
+const titleInput = document.getElementById("titleInput");
+const authorInput = document.getElementById("authorInput");
+const pageInput = document.getElementById("pageInput");
+const completedBox = document.getElementById("completedBox");
+
+// function to verify input (all forms + page is number)
+// check that book isn't already on the list
+
+function submit(){
+    if(verifyInput()){
+        let completion = completedBox.checked ? "✓" : "X";
+        addBookToLibrary(titleInput.value,authorInput.value,pageInput.value,completion);
+    }
+}
+
+// REFACTOR: Make this a ternary
+function verifyInput(){
+    // check that fields aren't empty
+    if((titleInput.value != '') && (authorInput.value != '') && (pageInput.value != '')){
+        return true;
+    } else{
+        return false;
+    }
+}
+
 let myLibrary = [];
 
 function Book(title, author, pageCount, completeness){
@@ -13,6 +40,14 @@ function Book(title, author, pageCount, completeness){
     this.author = author;
     this.pageCount = pageCount;
     this.completeness = completeness;
+}
+// swaps completion status
+Book.prototype.read = function(){
+    if(this.completeness == "✓"){
+        this.completeness = "X";
+    } else if(this.completeness == "X"){
+        this.completeness = "✓";
+    }
 }
 
 function addBookToLibrary(title, author, pageCount, completeness){
@@ -30,14 +65,15 @@ function addBookToLibrary(title, author, pageCount, completeness){
     list.appendChild(row);
 }
 
-addBookToLibrary("The Final Empire", "Brando Sando", "600", "yes");
-addBookToLibrary("The Well of Ascension", "Brandy Sandy", "600", "yes");
-addBookToLibrary("The Hero of Ages", "Brand Sand", "600", "no");
+// hard coded book examples
+addBookToLibrary("The Final Empire", "Brando Sando", "600", "✓");
+addBookToLibrary("The Well of Ascension", "Brandy Sandy", "600", "✓");
+addBookToLibrary("The Hero of Ages", "Brand Sand", "600", "X");
 
 
 
 myLibrary.forEach(book => {
-    console.log(book);
+    console.log(book,book.read());
 })
 
 // loops through the books in the array run display book
