@@ -1,12 +1,3 @@
-// const table = document.getElementById("book-table");
-// const tableBody = document.getElementById("book-list");
-// let newRow = tableBody.insertRow();
-// let titleCell = newRow.insertCell();
-// let authorCell = newRow.insertCell();
-// titleCell.innerHTML = "EXAMPLE TITLE";
-// authorCell.innerHTML = "EXAMPLE Author";
-
-// TODO: Add delete option
 
 const titleInput = document.getElementById("titleInput");
 const authorInput = document.getElementById("authorInput");
@@ -73,6 +64,15 @@ function addBookToLibrary(title, author, pageCount, completeness){
     `;
     list.appendChild(row);
 }
+
+function deleteBook(el){
+    if(el.classList.contains('remove')){
+        el.parentElement.parentElement.remove();
+    }
+}
+document.querySelector("#book-list").addEventListener('click',e => {
+    deleteBook(e.target);
+});
 
 // hard coded book examples
 addBookToLibrary("The Final Empire", "Brando Sando", "600", "✓");
