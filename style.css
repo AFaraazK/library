@@ -1,0 +1,64 @@
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+}
+body{
+    display:flex;
+    background-color:rgb(29, 28, 35);
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.sidebar{
+    height:100vh;
+    width:28vw;
+    background-color: rgb(35, 35, 37);
+    position: fixed;
+    color:white;
+    display:flex;
+    flex-direction: column;
+    padding:15px;
+}
+.sidebar h1{
+    align-self: center;
+    font-size: 48px;
+    letter-spacing: 5px;
+    margin-bottom: 20px;
+}
+
+.sidebar h4{
+    opacity: 75%;
+    font-size: 0.9rem;
+}
+.sidebar input{
+    width:25vw;
+    height:25px;
+    margin-bottom: 16px;
+}
+.sidebar input[type="checkbox"]{
+    width:40px;
+}
+.sidebar .inputSection{
+    display: flex;
+    flex-direction: column;
+}
+.sidebar .inputSection .completedDiv{
+    display:flex;
+    height: 40px;
+    width:10vw;
+    justify-content: flex-start;
+    gap:10px;
+}
+.sidebar .inputSection button{
+    cursor: pointer;
+    width:10vw;
+    height:30px;
+    font-weight: bold;
+    margin-top: 25px;
+}
+
+
+
+.main-content{
+    width:70vw;
+    height:400vh;
+}
