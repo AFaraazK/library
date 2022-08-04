@@ -20,7 +20,7 @@ body{
 }
 .sidebar h1{
     align-self: center;
-    font-size: 48px;
+    font-size: 3rem;
     letter-spacing: 5px;
     margin-bottom: 20px;
 }
@@ -50,7 +50,7 @@ body{
 }
 .sidebar .inputSection button{
     cursor: pointer;
-    width:10vw;
+    width:100px;
     height:30px;
     font-weight: bold;
     margin-top: 25px;
@@ -59,6 +59,18 @@ body{
 
 
 .main-content{
+    position: relative;
+    padding:18px;
+    left:27.5vw;
     width:70vw;
     height:400vh;
+    color:white;
+}
+.main-content h2{
+    text-align: center;
+    margin-bottom: 24px;
+}
+table{
+    width:100%;
+    border-bottom: 1px solid white;
 }
